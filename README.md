@@ -33,60 +33,13 @@ venv\Scripts\activate
 # For macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
-3️⃣ Install Dependencies
-bash
-Copy
+
+Install Dependencies
 pip install -r requirements.txt
-4️⃣ Install MarkItDown Package
-Since MarkItDown is an open-source package from Microsoft, install it from GitHub:
 
-bash
-Copy
-pip install git+https://github.com/microsoft/markitdown.git
-🚀 Usage
-Basic Example
-You can use MarkItDown in Python to convert documents into structured text:
 
-python
-Copy
-from markitdown import MarkItDown
-from openai import OpenAI
 
-# Initialize OpenAI client (if applicable)
-client = OpenAI()
-
-# Initialize MarkItDown with AI model
-md = MarkItDown(llm_client=client, llm_model="gpt-4o")
-
-# Convert an image or PDF to structured text
-result = md.convert("example_document.jpg")
-
-# Print extracted content
-print(result.text_content)
-📂 Project Structure
-bash
-Copy
-📦 document-extractor-poc
- ┣ 📂 data              # Sample input files (PDFs, images)
- ┣ 📂 output            # Extracted text outputs
- ┣ 📜 requirements.txt  # Required dependencies
- ┣ 📜 main.py           # Main script for document processing
- ┣ 📜 README.md         # Project documentation
- ┣ 📜 .gitignore        # Git ignore file
-🛠 Troubleshooting
-1️⃣ MarkItDown Installation Issues
-Ensure you have Python 3.9+ installed
-If pip install fails, upgrade pip:
-bash
-Copy
-pip install --upgrade pip
-If installation from GitHub fails, clone the repo manually:
-bash
-Copy
-git clone https://github.com/microsoft/markitdown.git
-cd markitdown
-pip install .
-2️⃣ File Processing Issues
+File Processing Issues
 Ensure the file format is supported (.jpg, .png, .pdf)
 Check if OpenAI API key is set correctly (if using AI processing)
 📜 License
